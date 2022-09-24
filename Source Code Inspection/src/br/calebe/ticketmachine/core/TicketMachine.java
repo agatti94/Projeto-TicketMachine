@@ -37,7 +37,7 @@ public class TicketMachine {
     }
 
     public Iterator<Integer> getTroco() {
-        return new;
+        return null;
     }
 
     public String imprimir() throws SaldoInsuficienteException {
@@ -45,7 +45,7 @@ public class TicketMachine {
             throw new SaldoInsuficienteException("Valor menor do que o permitido");
         }
         String result = "*****************\n";
-        result += "*** R$ " + saldo + ",00 ****\n";
+        result += "*** R$ " + valor + ",00 ****\n";
         result += "*****************\n";
         return result;
     }
