@@ -1,4 +1,4 @@
-package main.java.com.mycompany.core;
+package com.mycompany.core;
 
 /**
  *

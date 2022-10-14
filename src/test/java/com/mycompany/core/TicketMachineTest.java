@@ -1,29 +1,21 @@
-package test.java;
+package com.mycompany.core;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.TestCouldNotBeSkippedException;
+import com.mycompany.exception.PapelMoedaInvalidaException;
+import org.junit.jupiter.api.Test;
 
-import br.calebe.ticketmachine.core.TicketMachine;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TicketMachineTest {
+
+
     @Test
     public void testInserirUmaNota()
     {
         TicketMachine ticket = new TicketMachine(1);
         int quantidade = 1;
-        try{
-            ticket.inserir(quantidade);
 
-            assertEquals(2, ticket.getSaldo());
-        }
-        catch(Exception e){
-            Assert.fail();
-        }
+        assertThrows(PapelMoedaInvalidaException.class, () -> ticket.inserir(quantidade));
     }
 
     @Test
@@ -38,7 +30,7 @@ public class TicketMachineTest {
             assertEquals(result, a);
         }
         catch(Exception e){
-            Assert.fail();
+            fail();
         }
     }
 
